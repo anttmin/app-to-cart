@@ -1,28 +1,17 @@
-
-
-import {useEffect} from 'react'
+import Main from "./layout/Main"
+import ItemContextProvider from "./Store/ItemContent"
 
 const App = () => {
- useEffect(()=>{
-  fetchData()
- },[])
-
- const fetchData = async () =>{
-  const reponse = await fetch('https://jsonplaceholder.typicode.com/todos');
-  const data = await reponse.json();
-  console.log(data)
- }
-
   return (
+ 
    <>
-   <h1>Helo</h1>
+    <ItemContextProvider>
+    <Main />
+    </ItemContextProvider>
    </>
+
+   
   )
 }
 
 export default App
-
-
-  
-
-
