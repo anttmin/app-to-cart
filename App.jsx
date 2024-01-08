@@ -1,31 +1,11 @@
-import { useEffect, useState } from "react";
-import ProductCard from "./components/ProductCard";
+import Main from "./layout/Main";
 
-
-
-function App(){
- const [products, setProducts] = useState([]);
-
-    useEffect(() => {
-       getProducts(); 
-    },[]);
-
-    const getProducts = async () =>{
-        const response = await fetch ('https://fakestoreapi.com/products');
-        const products = await response.json();
-
-        setProducts(products)
-
-    }
-    
-    return(
-        <>
-          {
-            products.map((product)=>(
-               <ProductCard key={product.id} product={product} />
-            ))
-          }
-        </>
-    )
+function App() {
+  return (
+    <section>
+      <Main />
+    </section>
+  );
 }
-export default App
+
+export default App;
